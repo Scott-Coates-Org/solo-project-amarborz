@@ -42,5 +42,6 @@ Update your progress by checking off the tasks for each sprint. We will **not** 
 
 <img src="src/assets/images/mockups/mockup1.png" alt="mockup 1" width="200px">
 <img src="src/assets/images/mockups/mockup2.png" alt="mockup 2" width="200px">
+
 ![mockup 1](src/assets/images/mockups/mockup1.png)
 ![mockup 2](src/assets/images/mockups/mockup2.png)
