@@ -42,4 +42,4 @@ Update your progress by checking off the tasks for each sprint. We will **not** 
 
 [*Replace me with mockups*]
 
-| ![mockup 1](src\assets\images\mockups\mockup1.png) | ![mockup 2](src\assets\images\mockups\mockup1.png) |
+| ![mockup 1](src/assets/images/mockups/mockup1.png) | ![mockup 2](src/assets/images/mockups/mockup2.png) |
