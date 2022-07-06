@@ -2,6 +2,8 @@
 
 # Hangman With A Twist
 
+Publicly accessible at: https://hangman-e3d03.web.app
+
 ## Sprint Progress
 
 Update your progress by checking off the tasks for each sprint. We will **not** be using issues for solo projects.
