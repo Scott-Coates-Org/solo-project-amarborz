@@ -1,49 +1,66 @@
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { createWidget, fetchAllWidgets, savePhoto } from "redux/widget";
-import Layout from './layout';
+import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
+// import { Button, Form, FormGroup, Input, Label} from 'reactstrap'
+import { createWidget, fetchAllWidgets, savePhoto } from 'redux/widget'
+import HomePage from './homePage'
+import Layout from './layout'
+import Navbar from './navbar/Navbar'
 
 export default function Home(props) {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
-  const { data, isLoaded, hasErrors, } = useSelector((state) => state.widget);
+	const { data, isLoaded, hasErrors } = useSelector((state) => state.widget)
 
-  useEffect(() => {
-    // dispatch async thunks are promises
-    // https://redux-toolkit.js.org/api/createAsyncThunk#unwrapping-result-actions
-    dispatch(createWidget({ title: 'my title', type: 'my type', photo: 'http://placekitten.com/200/300' }))
-      .then(() => {
-        dispatch(fetchAllWidgets());
-      });
-  }, [dispatch]);
+	useEffect(() => {
+		// dispatch async thunks are promises
+		// https://redux-toolkit.js.org/api/createAsyncThunk#unwrapping-result-actions
+		dispatch(
+			createWidget({
+				title: 'my title',
+				type: 'my type',
+				photo: 'http://placekitten.com/200/300',
+			}),
+		).then(() => {
+			dispatch(fetchAllWidgets())
+		})
+	}, [dispatch])
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const { ref: titleRef, ...titleRest } = register('title', { required: true });
-  const { ref: typeRef, ...typeRest } = register('type', { required: true });
-  const { ref: photoRef, ...photoRest } = register('photo', { required: true });
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm()
+	const { ref: titleRef, ...titleRest } = register('title', { required: true })
+	const { ref: typeRef, ...typeRest } = register('type', { required: true })
+	const { ref: photoRef, ...photoRest } = register('photo', { required: true })
 
-  const onSubmit = data => {
-    if (Object.keys(errors).length) {
-      alert('Error saving widget: ' + JSON.stringify(errors));
-    } else {
-      dispatch(savePhoto({ file: data.photo[0] })).then(action => {
-        const photoUrl = action.payload;
-        if (photoUrl) {
-          dispatch(createWidget({ title: data.title, type: data.type, photo: photoUrl }))
-            .then(() => {
-              reset();
-              dispatch(fetchAllWidgets());
-            });
-        }
-      });
-    }
-  };
+	const onSubmit = (data) => {
+		if (Object.keys(errors).length) {
+			alert('Error saving widget: ' + JSON.stringify(errors))
+		} else {
+			dispatch(savePhoto({ file: data.photo[0] })).then((action) => {
+				const photoUrl = action.payload
+				if (photoUrl) {
+					dispatch(
+						createWidget({
+							title: data.title,
+							type: data.type,
+							photo: photoUrl,
+						}),
+					).then(() => {
+						reset()
+						dispatch(fetchAllWidgets())
+					})
+				}
+			})
+		}
+	}
 
-  return (
-    <Layout {...props}>
-      <nav className="d-flex flex-column align-items-center">
+	return (
+		<Layout {...props}>
+			{/* <nav className="d-flex flex-column align-items-center">
         <h1 className="my-3 text-center">My Project</h1>
         <section>
           {!isLoaded && 'Widgets loading…'}
@@ -70,7 +87,9 @@ export default function Home(props) {
             </div>
           }
         </section>
-      </nav>
-    </Layout>
-  );
+      </nav> */}
+			<Navbar />
+			<HomePage />
+		</Layout>
+	)
 }

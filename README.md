@@ -9,28 +9,28 @@ Update your progress by checking off the tasks for each sprint. We will **not** 
 ### Sprint 1
 
 - [x] Get app approved (DM Scott for approval)
-- [ ] Create mockups (physical paper, low-fi)
-- [ ] Define scope (DM Scott for approval)
-  - [ ] Define milestones for each sprint
-  - [ ] Define final deliverable for v1
-- [ ] App must
-  - [ ] Be publicly accessible
-  - [ ] Have working authentication
-  - [ ] Have technical component 5% done
+- [x] Create mockups (physical paper, low-fi)
+- [x] Define scope (DM Scott for approval)
+  - [x] Define milestones for each sprint
+  - [x] Define final deliverable for v1
+- [x] App must
+  - [x] Be publicly accessible
+  - [x] Have working authentication
+  - [x] Have technical component 5% done
 
 ### Sprint 2
 
-- [ ] Technical component 25%
-- [ ] Re-evaluate milestones and features
-- [ ] [*Fill me in with Sprint 2 milestones*]
-- [ ] [*Fill me in with Sprint 2 milestones*]
+- [x] Technical component 25%
+- [x] Re-evaluate milestones and features
+- [x] UI 100% finished
+- [x] Logic 50% finished
 
 ### Sprint 3
 
 - [ ] Technical component 50%
 - [ ] Re-evaluate milestones and features
-- [ ] [*Fill me in with Sprint 3 milestones*]
-- [ ] [*Fill me in with Sprint 3 milestones*]
+- [ ] Finish all logic
+- [ ] Add algorithm
 
 ### Sprint 4
 

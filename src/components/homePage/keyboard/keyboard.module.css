@@ -1,0 +1,19 @@
+.keyboardContainer {
+  margin-top: 5rem;
+}
+
+.lineContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.letter {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid black;
+  text-transform: capitalize;
+}
+
+.letter:hover {
+  cursor: pointer;
+}

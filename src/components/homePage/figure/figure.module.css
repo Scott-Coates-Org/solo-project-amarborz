@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.figureContainer {
+  fill: transparent;
+  stroke: rgb(0, 0, 0);
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
