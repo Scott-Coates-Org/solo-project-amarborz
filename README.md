@@ -29,9 +29,9 @@ Update your progress by checking off the tasks for each sprint. We will **not** 
 
 ### Sprint 3
 
-- [ ] Technical component 50%
-- [ ] Re-evaluate milestones and features
-- [ ] Finish all logic
+- [x] Technical component 50%
+- [x] Re-evaluate milestones and features
+- [x] Finish all logic
 - [ ] Add algorithm
 
 ### Sprint 4
