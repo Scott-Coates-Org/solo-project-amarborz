@@ -11,7 +11,6 @@ import { allWords } from '../allWords'
 // let selectedWord = words[Math.floor(Math.random() * words.length)]
 let number = Math.floor(Math.random() * (12 - 4) + 4)
 const words = allWords.filter((word) => word.length === number)
-console.log(words)
 
 const HomePage = () => {
 	const [possibleWords, setPossibleWords] = useState(words)
