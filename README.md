@@ -32,13 +32,11 @@ Update your progress by checking off the tasks for each sprint. We will **not** 
 - [x] Technical component 50%
 - [x] Re-evaluate milestones and features
 - [x] Finish all logic
-- [ ] Add algorithm
+- [x] Add algorithm
 
 ### Sprint 4
 
-- [ ] Technical component 100%
-- [ ] [*Fill me in with Sprint 4 milestones*]
-- [ ] [*Fill me in with Sprint 4 milestones*]
+- [x] Technical component 100%
 
 ## Mockups
 

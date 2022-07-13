@@ -1,16 +1,16 @@
 import styles from './modal.module.css'
 
-const Modal = ({ wrongLetters, playAgain, selectedWord, correctLetters }) => {
+const Modal = ({ wrongLetters, playAgain, possibleWords, correctLetters }) => {
 	const header = wrongLetters.length === 6 ? 'You Lost!' : 'You Won!'
 
 	const message =
 		wrongLetters.length === 6
-			? `The correct word was "${selectedWord}"`
-			: `You are right, the correct word is "${selectedWord}"`
+			? `The correct word was "${
+					possibleWords[Math.floor(Math.random() * possibleWords.length)]
+			  }"`
+			: `You are right, the correct word is "${possibleWords[0]}"`
 
-	const showModal =
-		wrongLetters.length === 6 ||
-		correctLetters.length === [...new Set(selectedWord)].join('').length
+	const showModal = wrongLetters.length >= 6
 
 	return (
 		<div

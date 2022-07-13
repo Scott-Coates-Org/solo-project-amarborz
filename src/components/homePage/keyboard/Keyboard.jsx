@@ -1,23 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { allLetters } from './letters'
 
 import styles from './keyboard.module.css'
 
-const Keyboard = ({ setWrongLetters, setCorrectLetters, selectedWord, letters,setLetters }) => {
-	
-
+const Keyboard = ({
+	setWrongLetters,
+	wrongLetters,
+	setPossibleWords,
+	letters,
+	setLetters,
+}) => {
 	const letterHandler = (inputLetter) => {
-		if (selectedWord.includes(inputLetter)) {
-			setCorrectLetters((currentLetters) => [...currentLetters, inputLetter])
+		if (!wrongLetters.includes(inputLetter)) {
+			setPossibleWords((oldWords) =>
+				oldWords.filter((word) => !word.includes(inputLetter)),
+			)
+			setWrongLetters((currentLetters) => [...currentLetters, inputLetter])
 		} else {
-			setWrongLetters((letters) => [...letters, inputLetter])
+			return
 		}
 
 		setLetters((oldLetters) =>
 			oldLetters.map((line) => line.filter((letter) => letter !== inputLetter)),
 		)
 	}
+
+	useEffect(() => {
+		setLetters((oldLetters) =>
+			oldLetters.map((line) =>
+				line.filter(
+					(letter) => letter !== wrongLetters[wrongLetters.length - 1],
+				),
+			),
+		)
+	}, [wrongLetters])
 
 	return (
 		<div className={styles.keyboardContainer}>
